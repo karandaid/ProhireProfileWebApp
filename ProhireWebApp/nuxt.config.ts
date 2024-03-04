@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["nuxt-primevue", 'nuxt-purgecss'],
-  ssr: true,
   css: [
     '/node_modules/primeflex/primeflex.css',
     'primevue/resources/themes/aura-light-green/theme.css',
@@ -19,11 +18,15 @@ export default defineNuxtConfig({
     },
   ],
   primevue: {
-    cssLayerOrder: 'reset,primevue',
+    // cssLayerOrder: 'reset,primevue',
     options: {
       ripple: true,
       inputStyle: 'filled'
     }
+  },
+  purgecss: {
+    enabled: false, // Always enable purgecss
+    // safelist: ['my-class'], // Add my-class token to the safelist (e.g. .my-class)
   }
 
 })
